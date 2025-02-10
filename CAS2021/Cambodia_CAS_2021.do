@@ -2583,6 +2583,12 @@ label drop _all
 export delimited Cambodia_CAS_2021_weights.csv, replace
 restore
 
+use "${Cambodia_CAS_2021_final_data}\Cambodia_CAS_2021_household_variables.dta", clear
+keep hhid fhh covid_shock ag_comm irrigation drought flood extension_training animal_ded_area rice feed_Chickens feed_Cattle 
+save "${Cambodia_CAS_save_folder}\Cambodia_CAS_2021_groups.dta", replace
+label drop _all
+export delimited Cambodia_CAS_2021_groups.csv, replace
+
 *create indicator list summary for export to Excel
 /*
 preserve
